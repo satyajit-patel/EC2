@@ -10,11 +10,11 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors());
 
-app.use("/", (req, res) => {
-    res.send("You are up");
-});
 app.use("/ping", (req, res) => {
     res.json({message: "pong"});
+});
+app.use("/", (req, res) => {
+    res.send("You are up");
 });
 
 app.listen(PORT, () => {
